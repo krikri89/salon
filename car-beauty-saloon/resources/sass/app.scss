@@ -12,9 +12,19 @@ h2,
 h3,
 h4 {
     font-family: "Monoton", cursive;
-    color: purple;
+    color: rgb(48, 9, 90);
 }
 
 body {
+    background-color: rgb(241, 186, 195);
     font-family: "Contrail One", cursive;
+}
+
+.controls {
+    display: flex;
+}
+
+.service-box input {
+    border: none;
+    font-size: 20px;
 }

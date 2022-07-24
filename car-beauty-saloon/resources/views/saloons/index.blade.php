@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1>List of saloons</h1>
+                    <h3>Our saloons</h3>
                     {{-- <div>
                         <a href="{{route('saloons-index', ['sort'=>'asc'])}}">A-Z</a>
                     <a href="{{route('saloons-index', ['sort'=>'desc'])}}">Z-A</a>
@@ -21,7 +21,7 @@
                     <li class="list-group-item">
                         <div class="saloon-bin">
                             <div class="saloon-box">
-                                <h2>{{$saloon->saloon}}</h2>
+                                <h5>{{$saloon->saloon}}</h5>
                             </div>
                             <div>{{$saloon->street}} g. {{$saloon->number}}</div>
                             <div>{{$saloon->city}} {{$saloon->zip}}</div>
@@ -42,7 +42,7 @@
                         </div>
                     </li>
                     @empty
-                    <li class="list-group-item">No saloons, no life.</li>
+                    <li class="list-group-item">Sorry, we are out of service at the moment</li>
                     @endforelse
                 </ul>
             </div>
