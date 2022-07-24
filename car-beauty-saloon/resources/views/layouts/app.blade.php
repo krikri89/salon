@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h3>Car Wash</h3>
+                    <h3>Car . Wash . Masters</h3>
 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -77,6 +77,19 @@
                                 </a>
                                 <a class="dropdown-item" href="{{ route('services-create') }}">
                                     Add new Service
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Wash Masters
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('services-index') }}">
+                                    Masters List
+                                </a>
+                                <a class="dropdown-item" href="{{ route('services-create') }}">
+                                    Add new Master
                                 </a>
                             </div>
                         </li>

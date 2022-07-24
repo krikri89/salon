@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaloonController as S;
 use App\Http\Controllers\ServiceController as Serv;
+use App\Http\Controllers\MasterController as M;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -43,3 +44,12 @@ Route::get('/services/edit/{service}', [Serv::class, 'edit'])->name('services-ed
 Route::put('/services/{service}', [Serv::class, 'update'])->name('services-update');
 Route::delete('/services/{service}', [Serv::class, 'destroy'])->name('services-delete');
 Route::get('/services/show/{id}', [Serv::class, 'show'])->name('services-show');
+
+//Masters
+Route::get('/masters', [M::class, 'index'])->name('masters-index');
+Route::get('/masters/create', [M::class, 'create'])->name('masters-create');
+Route::post('/masters', [M::class, 'store'])->name('masters-store');
+Route::get('/masters/edit/{master}', [M::class, 'edit'])->name('masters-edit');
+Route::put('/masters/{master}', [M::class, 'update'])->name('masters-update');
+Route::delete('/masters/{master}', [M::class, 'destroy'])->name('masters-delete');
+Route::get('/masters/show/{id}', [M::class, 'show'])->name('masters-show');
