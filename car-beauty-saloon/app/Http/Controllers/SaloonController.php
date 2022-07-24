@@ -54,9 +54,10 @@ class SaloonController extends Controller
      * @param  \App\Models\Saloon  $saloon
      * @return \Illuminate\Http\Response
      */
-    public function show(Saloon $saloon)
+    public function show(int $saloonId)
     {
-        //
+        $saloon = Saloon::where('id', $saloonId)->first();
+        return view('saloons.show', ['saloon' => $saloon]);
     }
 
     /**
@@ -67,7 +68,7 @@ class SaloonController extends Controller
      */
     public function edit(Saloon $saloon)
     {
-        //
+        return view('saloons.edit', ['saloon' => $saloon]);
     }
 
     /**
@@ -79,7 +80,14 @@ class SaloonController extends Controller
      */
     public function update(Request $request, Saloon $saloon)
     {
-        //
+        $saloon->saloon = $request->saloon_name;
+        $saloon->street = $request->saloon_street;
+        $saloon->number = $request->street_number;
+        $saloon->city = $request->city;
+        $saloon->zip = $request->zip_code;
+
+        $saloon->save();
+        return redirect()->route('saloons-index');
     }
 
     /**
@@ -90,6 +98,7 @@ class SaloonController extends Controller
      */
     public function destroy(Saloon $saloon)
     {
-        //
+        $saloon->delete();
+        return redirect()->route('saloons-index');
     }
 }

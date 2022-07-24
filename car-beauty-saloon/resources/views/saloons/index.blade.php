@@ -27,10 +27,10 @@
                             <div>{{$saloon->city}} {{$saloon->zip}}</div>
 
                             <div class="controls">
-                                <a class="btn btn-outline-secondary m-2" href="{{route('saloons-show', $saloon->id)}}">SHOW</a>
+                                <a class="btn btn-outline-secondary m-2" href="{{route('saloons-show', $saloon->id)}}">Show</a>
 
                                 {{-- @if(Auth::user()->role > 9) --}}
-                                <a class="btn btn-outline-primary m-2" href="{{route('saloons-edit', $saloon)}}">EDIT</a>
+                                <a class="btn btn-outline-primary m-2" href="{{route('saloons-edit', $saloon)}}">Edit</a>
                                 <form class="delete" action="{{route('saloons-delete', $saloon)}}" method="post">
                                     @csrf
                                     @method('delete')

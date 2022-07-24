@@ -29,7 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/saloons', [S::class, 'index'])->name('saloons-index');
 Route::get('/saloons/create', [S::class, 'create'])->name('saloons-create');
 Route::post('/saloons', [S::class, 'store'])->name('saloons-store');
-Route::get('/saloons/edit/{animal}', [S::class, 'edit'])->name('saloons-edit');
-Route::put('/saloons/{animal}', [S::class, 'update'])->name('saloons-update');
-Route::delete('/saloons/{animal}', [S::class, 'destroy'])->name('saloons-delete');
+Route::get('/saloons/edit/{saloon}', [S::class, 'edit'])->name('saloons-edit');
+Route::put('/saloons/{saloon}', [S::class, 'update'])->name('saloons-update');
+Route::delete('/saloons/{saloon}', [S::class, 'destroy'])->name('saloons-delete');
 Route::get('/saloons/show/{id}', [S::class, 'show'])->name('saloons-show');
