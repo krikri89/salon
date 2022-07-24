@@ -1,0 +1,15 @@
+{
+    "name": "kristina/salon",
+    "autoload": {
+        "psr-4": {
+            "Kristina\\Salon\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kristina Rudyte",
+            "email": "rkristina32@yahoo.com"
+        }
+    ],
+    "require": {}
+}
