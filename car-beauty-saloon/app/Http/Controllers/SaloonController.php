@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Saloon;
-use App\Http\Requests\StoreSaloonRequest;
-use App\Http\Requests\UpdateSaloonRequest;
+use Illuminate\Http\Request;
 
 class SaloonController extends Controller
 {
@@ -15,7 +14,8 @@ class SaloonController extends Controller
      */
     public function index()
     {
-        //
+        $saloons = Saloon::all();
+        return view('saloons.index', ['saloons' => $saloons]);
     }
 
     /**
@@ -25,18 +25,27 @@ class SaloonController extends Controller
      */
     public function create()
     {
-        //
+        return view('saloons.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreSaloonRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSaloonRequest $request)
+    public function store(Request $request)
     {
-        //
+        $saloon = new Saloon;
+
+        $saloon->saloon = $request->saloon_name;
+        $saloon->street = $request->saloon_street;
+        $saloon->number = $request->street_number;
+        $saloon->city = $request->city;
+        $saloon->zip = $request->zip_code;
+
+        $saloon->save();
+        return redirect()->route('saloons-index');
     }
 
     /**
@@ -64,11 +73,11 @@ class SaloonController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateSaloonRequest  $request
+     * @param  \App\Http\Requests\Request  $request
      * @param  \App\Models\Saloon  $saloon
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSaloonRequest $request, Saloon $saloon)
+    public function update(Request $request, Saloon $saloon)
     {
         //
     }

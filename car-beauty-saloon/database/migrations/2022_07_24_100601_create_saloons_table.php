@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('saloons', function (Blueprint $table) {
             $table->id();
+            $table->string('saloon', 50);
+            $table->string('street', 50);
+            $table->integer('number');
+            $table->string('city', 50);
+            $table->integer('zip');
             $table->timestamps();
         });
     }
