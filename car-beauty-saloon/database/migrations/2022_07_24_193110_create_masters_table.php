@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('masters', function (Blueprint $table) {
             $table->id();
+            $table->string('master', 20);
+            $table->integer('rating');
             $table->timestamps();
         });
     }

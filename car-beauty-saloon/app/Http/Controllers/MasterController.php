@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Master;
-use App\Models\Service;
-use App\Models\Saloon;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -27,9 +25,9 @@ class MasterController extends Controller
      */
     public function create()
     {
-        $saloons = Saloon::all();
+        $masters = Master::all();
 
-        return view('masters.create', ['saloons' => $saloons]);
+        return view('masters.create', ['masters' => $masters]);
     }
 
     /**
@@ -42,7 +40,7 @@ class MasterController extends Controller
     {
         $master = new Master;
 
-        $master->saloon_id = $request->saloon_id;
+        // $master->saloon_id = $request->saloon_id;
         $master->master = $request->master;
 
         $master->save();
@@ -69,11 +67,11 @@ class MasterController extends Controller
      */
     public function edit(Master $master)
     {
-        $saloons = Saloon::all();
+        $masters = Master::all();
 
         return view('masters.edit', [
             'master' => $master,
-            'saloons' => $saloons
+            // 'saloons' => $saloons
         ]);
     }
 

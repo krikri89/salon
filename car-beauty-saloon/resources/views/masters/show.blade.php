@@ -5,16 +5,16 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="nice">{{$service->service}}</h1>
+                    <h1 class="nice">{{$master->master}}</h1>
                 </div>
                 <div class="card-body">
-                    <div>{{$service->street}} g. {{$service->number}}</div>
-                    <div>{{$service->city}} {{$service->zip}}</div>
+                    <div>{{$master->street}} g. {{$master->number}}</div>
+                    <div>{{$master->city}} {{$master->zip}}</div>
 
                     <div class="service-bin">
                         <div class="controls">
-                            <a class="btn btn-outline-success m-2" href="{{route('services-edit', $service)}}">Edit</a>
-                            <form class="delete" action="{{route('services-delete', $service)}}" method="post">
+                            <a class="btn btn-outline-success m-2" href="{{route('masters-edit', $master)}}">Edit</a>
+                            <form class="delete" action="{{route('masters-delete', $master)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-outline-danger m-2">Destroy</button>

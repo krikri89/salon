@@ -17,23 +17,23 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        $faker = Faker::create();
-        $address = collect([]);
+        // $faker = Faker::create();
+        // $address = collect([]);
 
-        do {
-            $address->push($faker->address);
-            $address = $address->unique();
-        } while ($address->count() < 20);
+        // do {
+        //     $address->push($faker->address);
+        //     $address = $address->unique();
+        // } while ($address->count() < 20);
 
-        foreach ($address as $ads) {
-            DB::table('saloons')->insert([
-                'saloon' => $ads,
-                'street' => $ads,
-                'number' => $ads,
-                'city' => $ads,
-                'zip' => $ads,
-            ]);
-        }
+        // foreach ($address as $ads) {
+        //     DB::table('saloons')->insert([
+        //         'saloon' => $ads,
+        //         'street' => $ads,
+        //         'number' => $ads,
+        //         'city' => $ads,
+        //         'zip' => $ads,
+        //     ]);
+        // }
 
 
         $services = [
@@ -41,8 +41,17 @@ class DatabaseSeeder extends Seeder
         ];
         foreach (range(1, 12) as $_) {
             DB::table('services')->insert([
-                'services' => $services[rand(0, count($services) - 1)],
-                'saloon_id' => rand(1, 11)
+                'service' => $services[rand(0, count($services) - 1)],
+                'saloon_id' => 1
+            ]);
+        }
+
+        $masters = ['Josh', 'Marco', 'Robin', 'Johny', 'Jaunito', 'Kenny', 'Manu'];
+
+        foreach (range(1, 7) as $_) {
+            DB::table('masters')->insert([
+                'master' => $masters[rand(0, count($masters) - 1)],
+
             ]);
         }
     }

@@ -85,10 +85,10 @@
                                 Wash Masters
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('services-index') }}">
+                                <a class="dropdown-item" href="{{ route('masters-index') }}">
                                     Masters List
                                 </a>
-                                <a class="dropdown-item" href="{{ route('services-create') }}">
+                                <a class="dropdown-item" href="{{ route('masters-create') }}">
                                     Add new Master
                                 </a>
                             </div>

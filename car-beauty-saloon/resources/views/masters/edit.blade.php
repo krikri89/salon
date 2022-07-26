@@ -5,25 +5,25 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h1>service Edit</h1>
+                    <h1>master Edit</h1>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('services-update', $service)}}" method="post">
+                    <form action="{{route('masters-update', $master)}}" method="post">
                         <div class="form-group">
-                            <label>Service</label>
+                            <label>master</label>
                             {{-- <select class="form-control" name="saloon_id">
-                                @foreach($services as $service)
-                                <option value="{{$service->id}}" @if($saloon->id == $service->saloon_id)selected @endif>{{$service->service}}</option>
+                                @foreach($masters as $master)
+                                <option value="{{$master->id}}" @if($saloon->id == $master->saloon_id)selected @endif>{{$master->master}}</option>
                             @endforeach
                             </select> --}}
 
-                            <input class="form-control" type="text" name="service_name" value="{{$service->service}}" />
+                            <input class="form-control" type="text" name="master_name" value="{{$master->master}}" />
                         </div>
                         <div class="form-group">
                             <label>What saloon?</label>
                             <select class="form-control" name="saloon_id">
                                 @foreach($saloons as $saloon)
-                                <option value="{{$saloon->id}}" @if($saloon->id == $service->saloon_id)selected @endif>{{$saloon->saloon}}</option>
+                                <option value="{{$saloon->id}}" @if($saloon->id == $master->saloon_id)selected @endif>{{$saloon->saloon}}</option>
                                 @endforeach
                             </select>
                         </div>
