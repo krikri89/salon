@@ -13,19 +13,36 @@
                     <a href="{{route('services-index')}}">Reset</a>
                 </div> --}}
             </div>
-
+            {{-- {{$prev}}
             <div class="card-body">
-                <ul class="list-group">
+                <ul class="list-group"> --}}
                     @forelse($services as $service)
+                    {{-- {{$prev = $key}}
+                    @if($prev)
+
+                    @endif
+                    @if($loop->index != 0)
+                    {{$services->[$loop->index-1]}}
+                    @endif --}}
+                    {{-- {{$loop->index != 0 && $loop->index}} --}}
 
                     <li class="list-group-item">
                         <div class="service-bin">
                             <div class="service-box">
-                                <input readonly value="{{$service->getService->saloon}} - {{$service->getService->street}} {{$service->getService->number}}">
+                                {{-- @if(  {{$services[$loop-> index]->service}} != {{$services[$loop-> index -1]->service}})
+                                <h6>- {{$service->service}}
+                                </h6>
 
+
+
+                                @endif --}}
 
                                 <h6>- {{$service->service}}
                                 </h6>
+
+                                <input readonly value="{{$service->getService->saloon}} - {{$service->getService->street}} {{$service->getService->number}}">
+
+
                             </div>
 
                             <div class="controls">

@@ -84,7 +84,7 @@ class MasterController extends Controller
      */
     public function update(Request $request, Master $master)
     {
-        $master->saloon_id = $request->saloon_id;
+        // $master->saloon_id = $request->saloon_id;
         $master->master = $request->master;
 
         $master->save();
