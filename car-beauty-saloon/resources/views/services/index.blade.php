@@ -32,18 +32,19 @@
                                 {{-- @if(  {{$services[$loop-> index]->service}} != {{$services[$loop-> index -1]->service}})
                                 <h6>- {{$service->service}}
                                 </h6>
-
-
-
                                 @endif --}}
 
-                                <h6>- {{$service->service}}
-                                </h6>
 
-                                <input readonly value="{{$service->getService->saloon}} - {{$service->getService->street}} {{$service->getService->number}}">
+                                <i>{{$service->getService->saloon}}</i>
+                                {{-- <i>{{$service->getService->street}} {{$service->getService->number}}"</i> --}}
+
+                                <h5> - {{$service->service}}
+                                </h5>
 
 
                             </div>
+
+
 
                             <div class="controls">
                                 <a class="btn btn-outline-secondary m-2" href="{{route('services-show', $service->id)}}">Show</a>
