@@ -18,18 +18,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        // DB::table('users')->insert([
-        //     'name' => 'bebras',
-        //     'email' => 'bebras@gmail.com',
-        //     'password' => Hash::make('123'),
-        // ]);
+        DB::table('users')->insert([
+            'name' => 'bebras',
+            'email' => 'bebras@gmail.com',
+            'password' => Hash::make('123'),
+        ]);
 
-        // DB::table('users')->insert([
-        //     'name' => 'briedis',
-        //     'email' => 'briedis@gmail.com',
-        //     'password' => Hash::make('123'),
-        //     'role' => 10,
-        // ]);
+        DB::table('users')->insert([
+            'name' => 'briedis',
+            'email' => 'briedis@gmail.com',
+            'password' => Hash::make('123'),
+            'role' => 10,
+        ]);
 
 
         $saloon = ['Star service', 'Becky Bill', 'Drive Inn', 'La Mancha', 'Bubble Land', 'dsrff'];
@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
         foreach (range(0, 4) as $_) {
             DB::table('saloons')->insert([
                 'saloon' => $saloon[$_],
-                'street' => $street[rand(0, count($street) - 1)],
+                'street' => $street[$_],
                 'number' => rand(100, 999),
                 'city' => $city[rand(0, count($city) - 1)],
                 'zip' => rand(10000, 99999),

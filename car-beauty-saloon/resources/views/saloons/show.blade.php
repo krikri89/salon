@@ -13,12 +13,16 @@
 
                     <div class="saloon-bin">
                         <div class="controls">
+                            @if(Auth::user()->role > 9)
+
                             <a class="btn btn-outline-success m-2" href="{{route('saloons-edit', $saloon)}}">Edit</a>
                             <form class="delete" action="{{route('saloons-delete', $saloon)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-outline-danger m-2">Destroy</button>
+
                             </form>
+                            @endif
                         </div>
                     </div>
                 </div>
