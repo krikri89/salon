@@ -26,20 +26,25 @@
 
                                 <h6>- {{$master->master}}
                                 </h6>
+                                <div class="image-box">
+                                    <img src="{{$master->photo}}">
+                                </div>
+                                <div>{{$master->rating}}
+                                </div>
 
                             </div>
 
                             <div class="controls">
                                 <a class="btn btn-outline-secondary m-2" href="{{route('masters-show', $master->id)}}">Show</a>
 
-                                @if(Auth::user()->role > 9)
+                                {{-- @if(Auth::user()->role > 9) --}}
                                 <a class="btn btn-outline-primary m-2" href="{{route('masters-edit', $master)}}">Edit</a>
                                 <form class="delete" action="{{route('masters-delete', $master)}}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-outline-danger m-2" type="submit">Delete</button>
                                 </form>
-                                @endif
+                                {{-- @endif --}}
 
                             </div>
                         </div>

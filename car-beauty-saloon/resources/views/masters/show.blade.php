@@ -13,7 +13,7 @@
 
                     <div class="service-bin">
                         <div class="controls">
-                            @if(Auth::user()->role > 9)
+                            {{-- @if(Auth::user()->role > 9) --}}
 
                             <a class="btn btn-outline-success m-2" href="{{route('masters-edit', $master)}}">Edit</a>
                             <form class="delete" action="{{route('masters-delete', $master)}}" method="post">
@@ -21,7 +21,7 @@
                                 @method('delete')
                                 <button type="submit" class="btn btn-outline-danger m-2">Destroy</button>
                             </form>
-                            @endif
+                            {{-- @endif --}}
                         </div>
                     </div>
                 </div>

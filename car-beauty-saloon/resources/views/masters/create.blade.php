@@ -8,7 +8,7 @@
                     <h1>Add new master</h1>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('masters-store')}}" method="post">
+                    <form action="{{route('masters-store')}}" method="post" enctype="multipart/form-data">
                         {{-- <div class="form-group"> --}}
                         {{-- <label>New</label> --}}
                         {{-- <select class="form-control" name="master_id"> --}}
@@ -33,7 +33,12 @@
                         </div>
                         <div class="form-group">
                             <label>Rating</label>
-                            <input value="****">
+                            {{-- <input name="rating" value="****"> --}}
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input class="form-control" type="file" name="photo">
+
                         </div>
 
                         @csrf

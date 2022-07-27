@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('master', 20);
             $table->integer('rating');
+            $table->string('photo', 200)->nullable();
             $table->timestamps();
         });
     }

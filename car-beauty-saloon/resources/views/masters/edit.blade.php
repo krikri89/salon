@@ -8,7 +8,7 @@
                     <h1>master Edit</h1>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('masters-update', $master)}}" method="post">
+                    <form action="{{route('masters-update', $master)}}" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>master</label>
                             {{-- <select class="form-control" name="saloon_id">

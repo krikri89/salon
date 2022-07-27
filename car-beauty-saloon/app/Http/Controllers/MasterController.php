@@ -40,8 +40,26 @@ class MasterController extends Controller
     {
         $master = new Master;
 
+        if ($request->file('photo')) { // jeigu file yra
+
+            $photo = $request->file('photo');
+            $extension = $photo->getClientOriginalExtension(); // kadangi gaunam object, pasiimam extension, tan kad galetume padaryti linka
+            $name = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME); //originalus vardas w/o extension. kad eitu prideti extension kuriant nauja varda
+            $file = $name . '-' . rand(100000, 999999) . '.' . $extension; // generuojam file varda. Del saugumo ji pervadiname. orgin name + bruksnys + rand number + taskas + origin extend
+
+            // $Image = Image::make($photo)->greyscale();
+
+            // $Image->save($originalPath . time() . $photo->getClientOriginalName());
+
+            // $Image->move(public_path() . '/images', $file);
+
+            $photo->move(public_path() . '/images', $file); // kur norim ideti sia photo. su pavadinimu kuri sukuriam su $file
+            $master->photo = asset('/images') . '/' . $file; // i DB photo dali lenteleje
+
+        }
         // $master->saloon_id = $request->saloon_id;
         $master->master = $request->master;
+        $master->rating = $request->rating;
 
         $master->save();
         return redirect()->route('masters-index');
