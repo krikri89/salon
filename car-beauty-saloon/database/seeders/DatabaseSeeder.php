@@ -58,6 +58,7 @@ class DatabaseSeeder extends Seeder
         }
 
         $masters = ['Josh', 'Marco', 'Robin', 'Johny', 'Jaunito', 'Kenny', 'Manu'];
+        
 
         foreach (range(1, 7) as $_) {
             DB::table('masters')->insert([

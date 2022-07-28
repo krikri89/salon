@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label>Rating</label>
-                            {{-- <input name="rating" value="****"> --}}
+                            <input name="rating" value="****">
                         </div>
                         <div class="form-group">
                             <label>Image</label>

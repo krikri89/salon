@@ -29,7 +29,7 @@
                                 <div class="image-box">
                                     <img src="{{$master->photo}}">
                                 </div>
-                                <div>{{$master->rating}}
+                                <div> Rating {{$master->rating}}
                                 </div>
 
                             </div>
