@@ -45,7 +45,7 @@ class SaloonController extends Controller
         $saloon->zip = $request->zip_code;
 
         $saloon->save();
-        return redirect()->route('saloons-index');
+        return redirect()->route('saloons-index')->with('success', 'New Saloon succesfully added to the list');
     }
 
     /**
@@ -87,7 +87,7 @@ class SaloonController extends Controller
         $saloon->zip = $request->zip_code;
 
         $saloon->save();
-        return redirect()->route('saloons-index');
+        return redirect()->route('saloons-index')->with('success', 'Info updated');
     }
 
     /**
@@ -99,6 +99,6 @@ class SaloonController extends Controller
     public function destroy(Saloon $saloon)
     {
         $saloon->delete();
-        return redirect()->route('saloons-index');
+        return redirect()->route('saloons-index')->with('deleted', 'Saloon removed from the list');
     }
 }

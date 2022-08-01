@@ -62,7 +62,7 @@ class MasterController extends Controller
         $master->rating = $request->rating;
 
         $master->save();
-        return redirect()->route('masters-index');
+        return redirect()->route('masters-index')->with('success', 'Great job');
     }
 
     /**
@@ -106,7 +106,7 @@ class MasterController extends Controller
         $master->master = $request->master;
 
         $master->save();
-        return redirect()->route('masters-index');
+        return redirect()->route('masters-index')->with('success', 'Updated');
     }
 
     /**
@@ -118,6 +118,6 @@ class MasterController extends Controller
     public function destroy(Master $master)
     {
         $master->delete();
-        return redirect()->route('masters-index');
+        return redirect()->route('masters-index')->with('deleted', 'Master was removed from the saloon');
     }
 }
