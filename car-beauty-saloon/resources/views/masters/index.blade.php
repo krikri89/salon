@@ -7,11 +7,11 @@
             <div class="card">
                 <div class="card-header">
                     <h1>Our masters</h1>
-                    {{-- <div>
+                    <div>
                         <a href="{{route('masters-index', ['sort'=>'asc'])}}">A-Z</a>
                     <a href="{{route('masters-index', ['sort'=>'desc'])}}">Z-A</a>
                     <a href="{{route('masters-index')}}">Reset</a>
-                </div> --}}
+                </div>
             </div>
 
             <div class="card-body">

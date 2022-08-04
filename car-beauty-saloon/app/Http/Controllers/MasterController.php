@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Master;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MasterController extends Controller
 {
@@ -12,9 +13,15 @@ class MasterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $masters = Master::all();
+
+        $masters = match ($request->sort) {
+            'asc' => Master::orderBy('master', 'asc')->get(),
+            'desc' => Master::orderBy('master', 'desc')->get(),
+            default => Master::all()
+        };
+
         return view('masters.index', ['masters' => $masters]);
     }
 

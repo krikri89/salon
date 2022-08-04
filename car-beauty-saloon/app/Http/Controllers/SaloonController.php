@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Saloon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SaloonController extends Controller
 {
@@ -36,6 +37,23 @@ class SaloonController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'saloon' => ['required', 'min:3', 'max:64'], // is create input name, required - mandatory uzpildyti, min 3 simboliai ir max 64
+                // 'create_color_input' => ['required', 'regex:/^\#([0-9A-f]){6}$/i'],
+                //gali buti skaiciai nuo 0- iki 9, raides nuo a iki f(mazosios ir didziosios) ir total 6. 
+            ],
+            [
+                // 'author_surname.min' => 'mano zinute'// jeigu norim prideti savo error zinute
+            ]
+
+        );
+        if ($validator->fails()) { //tikrina ar viskas yra ok, sie errors buna pagaunami per main msg file su ($errors->any()
+            $request->flash(); //sumeta i 
+            return redirect()->back()->withErrors($validator);
+        }
+
         $saloon = new Saloon;
 
         $saloon->saloon = $request->saloon_name;
